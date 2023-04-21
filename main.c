@@ -22,6 +22,11 @@ int sig_sep(parsed_line pl);
 int main(int argc,char** args)
 {
 
+    char wcd[1024];
+     getcwd(wcd,1024);//ruta desde donde se llamo la shell
+     set_path(wcd);//guarda el path de history 
+     set_help_folder(wcd);//guarda el path para help (para no perder la ruta)
+
     char* charline_ptr; //para recibir la entrada estandar
     size_t size=0; //se guarda el tamanno de la entrada
     ssize_t read_code;//para ver el codigo de error al leer una linea

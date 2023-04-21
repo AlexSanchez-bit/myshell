@@ -2,9 +2,20 @@
 #ifndef History_h
 #define History_h
 
+
+char* path;
+
+void set_path(char* c_path)
+{
+char* file_name = "/history.hist";
+path=malloc(sizeof(char)*(strlen(file_name)+strlen(c_path)));
+path=strcat(path,c_path);
+path=strcat(path,file_name);
+}
+
 void write_history(char* line)
 {
-   int file = open("./history.hist",O_WRONLY | O_APPEND | O_CREAT);
+   int file = open(path,O_WRONLY | O_APPEND | O_CREAT);
    if(file==-1)
    {
     printf("error abriendo el archivo\n");
@@ -16,7 +27,7 @@ void write_history(char* line)
 void read_history()
 {
     char* buff = malloc(sizeof(char)*2000);
-   int file = open("./history.hist",O_RDONLY | O_CREAT);
+   int file = open(path,O_RDONLY | O_CREAT);
    read(file,buff,2000);
    char* token = strtok(buff,"\n");
    int i=0;
@@ -34,7 +45,7 @@ void read_history()
 char* get_last_line()
 {
     char* buff = malloc(sizeof(char)*2000);
-   int file = open("./history.hist",O_RDONLY | O_CREAT);
+   int file = open(path,O_RDONLY | O_CREAT);
    read(file,buff,2000);
    char* token = strtok(buff,"\n");
    char* ant=token;
