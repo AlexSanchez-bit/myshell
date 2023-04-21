@@ -1,0 +1,10 @@
+implementamos los operadores binarios para ejecutar multiples comandos
+implementamos ; que simplemente le dice al parser q diferencie de comandos
+estan los comandos extra true y false que simplemente ejecuatn los procesos
+y hacen exit con estatus 0 o -1 en cada caso
+
+el operador && ejecuta el primer comando , si este tiene status 0 pasa al segundo
+si tiene estatus -1 detiene la ejecucion o pasa al sigiente comando que tenga su respectivo separador
+
+el operador || ejecuta el primer comando , si este termina con estatus 0 entonces termina
+la ejecucion o pasa al siguiente comando 

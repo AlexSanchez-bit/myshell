@@ -1,0 +1,6 @@
+implementacion del argumento & que hace que el proceso padre no
+espere por el hijo que tenga como ultimo argumento &
+
+fg trae el ultimo proceso con & insertado al foreground
+
+jobs lista los procesos en 2do plano

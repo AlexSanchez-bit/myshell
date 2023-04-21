@@ -1,0 +1,13 @@
+la shell puede ejecutar cualquier comando de linux : ls echo grep etc
+se puede redireccionar la salida y entrada estandar con < >> >
+tambien se pueden intercambiar los streams de estrada y salida del comando
+ejemplo : comand1 2>1 cambia stdout por stderr
+          comand < file.txt >> file2.txt lee como entrada el file.txt y escribe la salida a file2.txt(append)
+          command 2> file.txt escribe en file.txt el stderr de comand
+
+se puede cambiar de directorio con cd
+
+al introducir el caracter # el resto de la linea deja de ser parseada
+ejemplo : comando 1 arg1 # ya esto no se ejecuta comando 2
+
+el prompt siempre se imprime antes y despues de la ejecucion de un comando 

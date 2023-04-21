@@ -1,0 +1,3 @@
+implementacion de la necesidad de tocar dos veces ctrl+c para quitar la shell
+usando un signal handler se puede cambiar el comportamiento de la shell
+ante una sennal

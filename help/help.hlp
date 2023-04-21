@@ -1,0 +1,24 @@
+Integrantes: Alex Sanchez Saez , Abdel Fregel Hernandez
+
+Funcionalidades:
+basic: Funcionalidad Basica (3 puntos)
+multipipe: multiple tuberia(1 punto)
+ctrl+c: capturar y enviar senales(0.5 puntos)
+multiespacio: mas de un espacio(0.5 puntos)
+jobs-fg: jobs y comanos en segundo plano(0.5 puntos)
+andor: Operaciones para concatenar comandos (0.5 puntos)
+help : mostrar esta ayuda (1 punto)
+history : historial de comandos (0.5 puntos)
+again : repetir ultimo comando (0.5 puntos)
+
+Comandos extra
+cd 
+history
+exit
+again 
+fg
+jobs
+true
+false
+
+total: 8 puntos

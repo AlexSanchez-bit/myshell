@@ -1,0 +1,8 @@
+se pueden utilizar multiples pipes para ejecutar comandos
+cuando se esta en una cadena de pipes se tienen 3 casos :  
+1- estas en el primer comando osea solo conectas el stdout al write_end del pipes
+2- estas en un pipe interior conectas la salida con el stdin con el read_end de uno de los pipes
+y enlazas el stdout con el write_end del otro de los pipes
+3- ultimo pipe de la lista solo conectas el stdin con el read_end  del pipe
+
+luego desde el padre s deben esperar los procesos 

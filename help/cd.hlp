@@ -1,0 +1,5 @@
+implementado metodo para cambiar de directorios
+despues de recibir el comando cd , si tiene como argumentos un 
+string vacio o un ~ redirecciona al home , caso contrario
+redirecciona a la ruta pasada como argumento 
+todo usando el metodo chdir que es ta en unistd.h
