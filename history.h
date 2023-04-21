@@ -21,6 +21,7 @@ void write_history(char* line)
     printf("error abriendo el archivo\n");
    }
    write(file,line,strlen(line));
+   write(file,"\n",1);
    close(file);
 }
 

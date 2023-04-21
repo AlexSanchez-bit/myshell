@@ -257,6 +257,7 @@ void change_prompt()
 
  int sig_sep(parsed_line pl)//auxiliar para determinar el siguiente separador que no sea |
  {
+   if(pl.separator->size ==0){return 0;}
    List* aux = pl.separator;
    int cant=0;
 

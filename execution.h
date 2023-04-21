@@ -64,6 +64,10 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
       {
             exit(EXIT_SUCCESS);     
       }
+      if(strcmp(command,"again")==0)
+      {
+            exit(EXIT_SUCCESS);     
+      }
       if(strcmp(command,"Jobs")==0 || strcmp(command,"jobs")==0)
       {
             exit(EXIT_SUCCESS);     

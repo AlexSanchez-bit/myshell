@@ -42,3 +42,49 @@ clear
 cd
 clear
 ls
+clear
+ls
+cd
+ls
+clear
+history
+clear
+clear
+history
+clear
+ls
+clear
+ls
+clear
+ls
+
+clear
+
+ls
+
+false || again
+
+false || ls
+
+true || ls
+
+false || ls
+
+clear
+
+false
+
+clear
+
+false || ls
+
+true || ls
+
+true || ls
+
+true || ls
+
+clear
+
+ls | grep u
+
