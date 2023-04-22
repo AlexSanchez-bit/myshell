@@ -47,7 +47,7 @@ int main(int argc,char** args)
          pl = from(charline_ptr,size);
 
 
-         if(strcmp(pl.commands->data,"again")!=0){
+         if(strcmp(pl.commands->data,"again")!=0 ){
          last_line=malloc(sizeof(char)*(size));
          strcpy(last_line,charline_ptr);
           write_history(charline_ptr);
