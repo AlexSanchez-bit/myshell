@@ -93,6 +93,7 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
         }else if(pipe1!=NULL && pipe2!=NULL)
         {
             //los del medio
+                close(pipe1[WRITE_END]); 
                 close(pipe2[READ_END]);
                 dup2(pipe1[READ_END],STDIN_FILENO);
                 close(pipe1[READ_END]);
@@ -102,11 +103,12 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
 
         }else if( pipe1==NULL && pipe2!=NULL){
             //el ultimo del enlace
+                close(pipe2[WRITE_END]);
                 dup2(pipe2[READ_END],STDIN_FILENO);
                 close(pipe2[READ_END]);
         }
 
-             printf(" \n");
+            printf(" \n");
 
        for(int i=0;*(r_inp+i)!=NULL;i++)
        {
@@ -139,7 +141,6 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
         }else if( pipe1==NULL && pipe2!=NULL){
          close(pipe2[READ_END]);
         }
-
         return pid;
     }
 }

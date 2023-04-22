@@ -11,6 +11,7 @@ int job_count=0;
 List* Jobs;
 StackInt* job_stack=NULL;//stack para los procesos en el background
 char* last_line;
+char* color ="\x1b[38;2;0;255;180m";
 
 //metodos auxiliares
 void execcmd(parsed_line pl);
@@ -18,6 +19,7 @@ void notification(char*,int);
 void change_prompt();
 int manage_separator(char* separator,int status);
 int sig_sep(parsed_line pl);
+void change_color(int status);
 
 int main(int argc,char** args)
 {
@@ -34,7 +36,7 @@ int main(int argc,char** args)
     Jobs = new_p();
     last_line=get_last_line();
     while(1){ //loop
-      printf("%s",prompt); //muestra el prompt
+      printf("%s%s \x1b[38;2;255;255;255m",color,prompt); //muestra el prompt
           signal(SIGINT,sign_handler); 
     read_code= getline(&charline_ptr,&size,stdin);//recibe el input    
           if (read_code==-1)
@@ -106,6 +108,7 @@ void execcmd(parsed_line pl)
              if(err==-1)
              {
                printf(" el proceso %d no existe\n",atoi(arg));
+               change_color(100);
              }else{
                waitpid(atoi(arg),&status,0);
                notification(at(Jobs,err),status);
@@ -187,7 +190,7 @@ void execcmd(parsed_line pl)
             waitpid(tmp,&status,0);
             tmp = pop(&pipes_pids);
          }
-
+         change_color(status);
          if(separator!=NULL){
 
          int sep = manage_separator(separator,status);
@@ -228,11 +231,23 @@ void change_prompt()
      {
          *(prompt+i)='*';
      }
+      color ="\x1b[38;2;0;0;180m";
      prompt=strcat(prompt,"myshell $:");
    }
    else{
       prompt=malloc(sizeof(char)*11);
+      color ="\x1b[38;2;0;255;180m";
       prompt="\nmyshell $:";
+   }
+}
+
+void change_color(int status)
+{
+   if(status==0)
+   {
+      color ="\x1b[38;2;0;255;180m";
+   }else{
+      color ="\x1b[38;2;255;0;0m";
    }
 }
 
