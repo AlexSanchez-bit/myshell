@@ -268,3 +268,173 @@ clear
 
 exit
 
+clear
+
+ls 6
+
+clear
+
+kill picom
+
+clear
+
+picom &
+
+clear
+
+jobs
+
+clear
+
+fg
+
+clear
+
+firefox
+
+clear
+
+python
+
+clear
+
+pwd
+
+clear
+
+exit
+
+clear
+
+ls a
+
+clear
+
+ls &
+
+ls &
+
+clear
+
+jobs
+
+fg
+
+fg 4587
+
+clear
+
+nvim .
+
+clear
+
+clear
+
+ls
+
+rm main
+
+clear
+
+nvim main.c
+
+nvim .
+
+clear
+
+make build
+
+make run 
+
+clear
+
+clear
+
+clear
+
+clear
+
+clear
+
+[Aclear
+
+[Cclear
+
+clear
+
+v
+
+clear
+
+nvim .
+
+v
+
+clear
+
+nvim .
+
+clear
+
+clear
+
+kill picom
+
+picom
+
+clear
+
+picom &
+
+clear
+
+jobs
+
+clear
+
+ls &
+
+clear
+
+jobs
+
+fg ls
+
+fg
+
+clear
+
+fg
+
+clear
+
+ls &
+
+clear
+
+fg
+
+clear
+
+if ls
+
+clear
+
+ls -al | grep u > alex.txt | grep ex
+
+ls -al | grep u | grep ex
+
+clear
+
+ls
+
+nano alex.txt
+
+rm alex.txt
+
+clear
+
+pwd
+
+clear
+

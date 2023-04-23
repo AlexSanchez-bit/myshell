@@ -8,9 +8,9 @@
 Este proyecto consiste en una shell de sistema linux
 
 >### como ejecutar este proyecto:
-	-make build : compila y genera el binario shell.out
+	- make build : compila y genera el binario shell.out
 
-	-make run : corre el binario despues de compilar
+	- make run : corre el binario despues de compilar
 
 # Funcionalidades:
  - basic: Funcionalidad Basica

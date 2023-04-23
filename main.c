@@ -46,7 +46,10 @@ int main(int argc,char** args)
           }
          pl = from(charline_ptr,size);
 
-
+         if(pl.commands->data==NULL)
+         {
+            continue;   
+         }
          if(strcmp(pl.commands->data,"again")!=0 ){
          last_line=malloc(sizeof(char)*(size));
          strcpy(last_line,charline_ptr);
@@ -231,7 +234,7 @@ void change_prompt()
      {
          *(prompt+i)='*';
      }
-      color ="\x1b[38;2;0;0;180m";
+      color ="\x1b[38;2;0;100;180m";
      prompt=strcat(prompt,"myshell $:");
    }
    else{
@@ -242,11 +245,15 @@ void change_prompt()
 }
 
 void change_color(int status)
-{
-   if(status==0)
+{   
+   if(status==0 && job_count==0)
    {
       color ="\x1b[38;2;0;255;180m";
-   }else{
+   }else if(status==0)
+   {
+      color ="\x1b[38;2;0;100;180m";
+   }
+   else{
       color ="\x1b[38;2;255;0;0m";
    }
 }
