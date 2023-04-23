@@ -2,8 +2,10 @@
 #ifndef SignHandling_h
 #define SignHandling_h
 
+int last_pid;
 void sign_handler(int sign_num)
 {
+     kill(last_pid,0);
      signal(SIGINT,SIG_DFL);
 }
 

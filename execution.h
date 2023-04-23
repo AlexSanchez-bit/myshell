@@ -115,19 +115,19 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
         redirect(*(r_inp+i));
        }
          
-
-    char* const_head = (*(command)!='.' && *(command)!='/')?"/bin/":"";
-    char* call_status = concat(const_head,command);
+                char* const_head = (*(command)!='.' && *(command)!='/')?"/bin/":"";
+                char* call_status = concat(const_head,command);
+                fflush(stdout);
                 int execution = execv(call_status,args);
                 if(execution==-1)
                     {
                         fprintf(stderr,"comando no reconocido : %s \n",command);
                         exit(EXIT_FAILURE);     
                     }
-    exit(EXIT_SUCCESS);     
     }
     else
     {
+      fflush(stdout);
         if(wait==0){
             return pid*-1;
         }

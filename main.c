@@ -20,6 +20,7 @@ void change_prompt();
 int manage_separator(char* separator,int status);
 int sig_sep(parsed_line pl);
 void change_color(int status);
+ void ver_procesos_background();
 
 int main(int argc,char** args)
 {
@@ -35,9 +36,12 @@ int main(int argc,char** args)
     parsed_line pl = new_l();
     Jobs = new_p();
     last_line=get_last_line();
+   signal(SIGINT,sign_handler); 
     while(1){ //loop
+
+      ver_procesos_background();
       printf("%s%s \x1b[38;2;255;255;255m",color,prompt); //muestra el prompt
-          signal(SIGINT,sign_handler); 
+      fflush(stdout);
     read_code= getline(&charline_ptr,&size,stdin);//recibe el input    
           if (read_code==-1)
           {
@@ -104,8 +108,8 @@ void execcmd(parsed_line pl)
          if(arg==NULL){
          int towait = pop(&job_stack);
          if(towait==-1){continue;}
-         waitpid(towait,&status,0);
-         notification(at(Jobs,job_count-1),status);
+         waitpid(towait,&status,0);//espera por el proceso
+         notification(at(Jobs,job_count-1),status);//notifica a la terminal
          }else{
              int err = remove_el(&job_stack,atoi(arg));
              if(err==-1)
@@ -113,9 +117,10 @@ void execcmd(parsed_line pl)
                printf(" el proceso %d no existe\n",atoi(arg));
                change_color(100);
              }else{
-               waitpid(atoi(arg),&status,0);
-               notification(at(Jobs,err),status);
-               remove_l(at_a(pl.arguments,i),arg);
+               last_pid=atoi(arg);
+               waitpid(atoi(arg),&status,0);//espera al proceso
+               notification(at(Jobs,err),status);//notifica a la terminal
+               remove_l(at_a(pl.arguments,i),arg);//elimina el argumento
              }
 
          }
@@ -184,15 +189,16 @@ void execcmd(parsed_line pl)
          change_prompt();      
       }else 
       if (in_pipe==-1) // si no esta dentro de un pipe se espera a los procesos
-      {
+      {         
+         last_pid=job_pid;
          int status;
          int tmp = pop(&pipes_pids);
-         waitpid(job_pid,&status,0);
          while (tmp!=-1)
          {
             waitpid(tmp,&status,0);
             tmp = pop(&pipes_pids);
          }
+         waitpid(job_pid,&status,0);
          change_color(status);
          if(separator!=NULL){
 
@@ -211,7 +217,6 @@ void execcmd(parsed_line pl)
          push(&pipes_pids,job_pid);
       }
    }
-
 free(pipes);
 free(pipes_pids);
 }
@@ -291,4 +296,17 @@ void change_color(int status)
    
   return cant; 
 
+ }
+
+ void ver_procesos_background()
+ {
+      for(StackInt* aux = job_stack;aux!=NULL;aux=aux->next){
+            int status=-1;
+            int pid=aux->data;
+              waitpid(pid,&status,WNOHANG);
+              if(status!=-1){
+             int pos = remove_el(&job_stack,pid);             
+               notification(at(Jobs,pos),status);//notifica a la terminal
+              }
+    }
  }
