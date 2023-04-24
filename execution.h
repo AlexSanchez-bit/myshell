@@ -108,7 +108,7 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
                 close(pipe2[READ_END]);
         }
 
-            printf(" \n");
+                printf(" \n");
 
        for(int i=0;*(r_inp+i)!=NULL;i++)
        {
@@ -117,8 +117,8 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
          
                 char* const_head = (*(command)!='.' && *(command)!='/')?"/bin/":"";
                 char* call_status = concat(const_head,command);
-                fflush(stdout);
-                int execution = execv(call_status,args);
+                fflush(NULL);
+                int execution = execvp(call_status,args);
                 if(execution==-1)
                     {
                         fprintf(stderr,"comando no reconocido : %s \n",command);

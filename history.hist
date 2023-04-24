@@ -1309,3 +1309,161 @@ ls | grep u && ls | wc
 
 clear
 
+clear
+
+ls
+
+clear
+
+ls &
+
+clear
+
+clear
+
+ls
+
+clear
+
+make build
+
+clear
+
+make run
+
+clear
+
+ls
+
+clear
+
+ls &
+
+clear
+
+clear
+
+ls
+
+clear
+
+ls &
+
+clear
+
+clear
+
+clear
+
+ls
+
+clear
+
+clear &
+
+clear
+
+ls
+
+clear
+
+exit
+
+ls
+
+clear
+
+ls &
+
+clear
+
+python &
+
+clear
+
+ls
+
+clear
+
+ls
+
+clear
+
+python &
+
+clear
+
+ls
+
+clear
+
+ls | grep u
+
+clear
+
+clear
+
+ls
+
+clear
+
+ls | grep a
+
+make build
+
+clear
+
+ls
+
+clear
+
+ls | grep u
+
+clear
+
+make build
+
+clear
+
+ls | grep u
+
+clear
+
+ls | grep u
+
+clear
+
+ls | cat
+
+clear
+
+clear
+
+ls
+
+clear
+
+ls | grep a
+
+clear
+
+ls | grep a && ls | grep e | wc -l
+
+clear
+
+picom &
+
+clear
+
+ls
+
+clear
+
+jobs
+
+clear
+
+jobs
+
+fg 17783
+

@@ -39,7 +39,6 @@ int main(int argc,char** args)
    signal(SIGINT,sign_handler); 
     while(1){ //loop
 
-      ver_procesos_background();
       printf("%s%s \x1b[38;2;255;255;255m",color,prompt); //muestra el prompt
       fflush(stdout);
     read_code= getline(&charline_ptr,&size,stdin);//recibe el input    
@@ -60,6 +59,7 @@ int main(int argc,char** args)
           write_history(charline_ptr);
          }
          execcmd(pl);
+      ver_procesos_background();
     }
 
  return 0;   
