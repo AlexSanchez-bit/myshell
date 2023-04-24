@@ -303,9 +303,9 @@ void change_color(int status)
       for(StackInt* aux = job_stack;aux!=NULL;aux=aux->next){
             int status=-1;
             int pid=aux->data;
-              waitpid(pid,&status,WNOHANG);
+             status=waitpid(pid,&status,WNOHANG);
               if(status!=-1){
-             int pos = remove_el(&job_stack,pid);             
+               int pos = remove_el(&job_stack,pid);             
                notification(at(Jobs,pos),status);//notifica a la terminal
               }
     }

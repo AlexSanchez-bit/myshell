@@ -108,6 +108,7 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
                 close(pipe2[READ_END]);
         }
 
+
                 printf(" \n");
 
        for(int i=0;*(r_inp+i)!=NULL;i++)
