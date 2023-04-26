@@ -622,3 +622,90 @@ clear
 
 exit
 
+clear
+
+clear
+
+set a `l
+get a
+
+clear
+
+get a `l
+get
+
+get
+
+clear
+
+get
+
+get a
+
+clear
+
+clear
+
+clear
+
+set a ls
+set
+
+get a
+
+clear
+
+get a `l
+get a
+
+clear
+
+get a `l
+set a `l
+get a
+
+clear
+
+set alex
+    ls    
+
+set a `l
+get a
+
+clear
+
+ls -al | grep u | wc
+
+clear
+
+set a `ls`
+
+get a
+
+clear
+
+get a
+
+clear
+
+set b `l
+get b
+
+clear
+
+set b `ls -al | grep u | wc`
+
+get b
+
+clear
+
+set a `l
+get a
+
+set a `l
+get a
+
+clear
+
+exit
+
