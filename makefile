@@ -4,4 +4,4 @@ build:
 
 .PHONY: dev
 run:
-	./shell.out
+	gcc main.c -o shell.out && ./shell.out

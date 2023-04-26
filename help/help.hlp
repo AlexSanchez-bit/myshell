@@ -10,6 +10,7 @@ andor: Operaciones para concatenar comandos (0.5 puntos)
 help : mostrar esta ayuda (1 punto)
 history : historial de comandos (0.5 puntos)
 again : repetir ultimo comando (0.5 puntos)
+variables : manejar variables con set get unset(1 punto)
 
 Comandos extra
 cd 
@@ -21,4 +22,4 @@ jobs
 true
 false
 
-total: 8 puntos
+total: 9 puntos

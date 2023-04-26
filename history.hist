@@ -1,1503 +1,598 @@
-exit
-clear
-history
-clear
-ls
-clear
-cmatrix
-clear
-ls
-clear
-help
-clear
-help cd
-clear
-help tru
-help true
-clear
-dld
-clear
-help
-clear
-help fg
-clear
-clear
-clear
-ls
-clear
-wc
-clear
-picom
-clear
-kill picom
-clear
-picom
-clear
-clear
-ls
-clear
-clear
-ls
-clear
-cd
-clear
-ls
-clear
-ls
-cd
-ls
-clear
-history
-clear
-clear
-history
-clear
-ls
-clear
-ls
-clear
-ls
-
 clear
 
-ls
-
-false || again
-
-false || ls
-
-true || ls
-
-false || ls
-
-clear
-
-false
-
-clear
-
-false || ls
-
-true || ls
-
-true || ls
-
-true || ls
-
-clear
-
-ls | grep u
-
-false || ls
-
-true || ls
-
-clear
+histiry
 
 history
 
-exit
-
-clear
-
-ls | grep u
-
-ls
-
-clear
-
 clear
 
 ls
 
 clear
 
-ls | grep u
+set a 'history'
 
-clear
-
-ls
-
-clear
-
-s
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-ls | grep u
-
-clear
-
-ls
-
-clear
-
-ls | grep u
-
-clear
-
-ls | grep u
-
-ls | grep u
-
-ls
-
-clear
-
-lk
-
-ls
-
-ls
-
-clear
-
-ls | grep u
-
-ls
-
-clear
-
-ls | grep u
-
-ls | grep u | wc -l
-
-clear
-
-ls | grep u
-
-clear
-
-ls
-
-clear
-
-ls | grep u
-
-clear
-
-ls | grep u
-
-clear
-
-ls | grep u
-
-clear
-
-ls | grep u
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-clear
-
-ls
-
-clear
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls a
-
-clear
-
-ls &
-
-clearclear
-
-clear
-
-clear
-
-ls
-
-clear
-
-clear
-
-ls
-
-clear
+set
 
 history
 
 clear
 
-clear
-
-clear
-
-ls
-
-clear
-
-ls a
-
-clear
-
-dsd
-
-clear
-
-true
-
-false
-
-clear
-
-exit
-
-clear
-
-ls 6
-
-clear
-
-kill picom
-
-clear
-
-picom &
-
-clear
-
-jobs
-
-clear
-
-fg
-
-clear
-
-firefox
-
-clear
-
-python
-
-clear
-
-pwd
-
-clear
-
-exit
-
-clear
-
-ls a
-
-clear
-
-ls &
-
-ls &
-
-clear
-
-jobs
-
-fg
-
-fg 4587
-
-clear
-
-nvim .
-
-clear
-
-clear
-
-ls
-
-rm main
-
-clear
-
-nvim main.c
-
-nvim .
-
-clear
-
-make build
-
-make run 
-
-clear
-
-clear
-
-clear
-
-clear
-
-clear
-
-[Aclear
-
-[Cclear
-
-clear
-
-v
-
-clear
-
-nvim .
-
-v
-
-clear
-
-nvim .
-
-clear
-
-clear
-
-kill picom
-
-picom
-
-clear
-
-picom &
-
-clear
-
-jobs
-
-clear
-
-ls &
-
-clear
-
-jobs
-
-fg ls
-
-fg
-
-clear
-
-fg
-
-clear
-
-ls &
-
-clear
-
-fg
-
-clear
-
-if ls
-
-clear
-
-ls -al | grep u > alex.txt | grep ex
-
-ls -al | grep u | grep ex
-
-clear
-
-ls
-
-nano alex.txt
-
-rm alex.txt
-
-clear
-
-pwd
-
-clear
-
-cd ~
-
-cd ~/alex
-
-clear
-
-clear
-
-cd ~/datos
-
-clear
-
-pwd
-
-clear
-
-clear
-
-ls > ~/alex
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls a
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-picom &
-
-clear
-
-picom &
-
-clear
-
-picom &
-
-clear
-
-kill picom
-
-clear
-
-picom &
-
-clear
-
-picom &
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-python &
-
-clear
-
-picom &
-
-clear
-
-python *
-
-clear
-
-python &
-
-clear
-
-python &
-
-ls
-
-clear
-
-picom &
-
-clear
-
-python &
-
-clear
-
-ls
-
-picom
-
-clear
-
-picom &
-
-clear
-
-jobs
-
-fg 56506
-
-clear
-
-python 
-
-clear
-
-python &
-
-picom
-
-clear
-
-picom &
-
-clear
-
-ls
-
-jobs
-
-fg picom
-
-fg 57347
-
-clear
-
-clear
-
-picom &
-
-clear
-
-ls
-
-clear
-
-python &
-
-clear
-
-clear
-
-ls
-
-jobs
-
-clear
-
-python &
-
-clear
-
-ls
-
-clear
-
-picom
-
-clear
-
-kill picom
-
-clear
-
-picom 
-
-clear
-
-picom &
-
-clear
-
-ls
-
-clear
-
-jobs
-
-clear
-
-python & 
-
-ls | grep u
-
-clear
-
-ls | grep u &
-
-clear
-
-jobs
-
-clear
-
-clear
-
-ls &
-
-clear
-
-python &
-
-picom &
-
-clear
-
-jobs
-
-clear
-
-picom
-
-clear
-
-kill picom
-
-clear
-
-picom &
-
-clear
-
-jobs
-
-clear
-
-picom
-
-clear
-
-picom
-
-kill picom
-
-clear
-
-picom
-
-clear
-
-picom
-
-kill picom
-
-clear
-
-picom
-
-clear
-
-python &
-
-clear
-
-ls
-
-clear
-
-clear
-
-clear
-
-ls
-
-ls
-
-clear
-
-ls
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-picom &
-
-clear
-
-python &
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-ls &
-
-clear
-
-jobs
-
-clear
-
-python
-
-clear
-
-python &
-
-clear
-
-fg
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-fg
-
-jobs
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-jobs
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-jobs
-
-clear
-
-fg
-
-clear
-
-kill picom
-
-clear
-
-picom &
-
-clear
-
-fg
-
-clear
-
-clear
-
-ls
-
-picom &
-
-clear
-
-fg
-
-clear
-
-python &
-
-clear
-
-picom &
-
-jobs
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-python &
-
-python &
-
-clear
-
-python &
-
-python &
-
-clear
-
-ls
-
-clear
-
-ls | grep ex
-
-clear
-
-python
-
-lear
-
-clear
-
-python &
-
-ls &
-
-clear
-
-fg
-
-clear
-
-clear
-
-sleep 12
-
-dsff
-
-sdsd
-
-clear
-
-sleep 3 &
-
-clear
-
-jobs
-
-sleep 3 &
-
-clear
-
-sleep 3&
-
-sleep 5 &
-
-clear
-
-jobs
-
-sleep 10 &
-
-jobs
-
-jobs
-
-clear
-
-ls &
-
-clear
-
-jobs
-
-ls &
-
-jobs
-
-clear
-
-sleep 10 &
-
-jobs
-
-sleep
-
-sleep 10 &
-
-clear
-
-job
-
-jobs
-
-ls &
-
-jobs
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-ls
-
-ls &
-
-clear
-
-ls
-
-clear
-
-jobs
-
-clear
-
-kill picom
-
-clear
-
-picom &
-
-clear
-
-sleep 12 &
-
-sleep 13 &
-
-job
-
-jobs
-
-clear
-
-exit
-
-clear
-
-kill picom
-
-clear
-
-picom &
-
-clear
-
-sleep 10 &
-
-clear
-
-sleep 12 &
-
-clear
-
-kill picom
-
-clear
-
-jobs
-
-picom &
-
-sleep 12 &
-
-jobs
-
-clear
-
-ls
-
-clear
-
-sleep 5 &
-
-clear
-
-sleep 1 &
-
-sleep 1 &
-
-sleep 1 &
-
-clear
-
-ls
-
-clear
-
-sleep 1 &
-
-clear
-
-python &
-
-ls | grep ex
-
-clear
-
-ls
-
-clear
-
-ls -al
-
-clear
-
-la -al | grep o
-
-clear
-
-ls -al | grep o
-
-clear
-
-la -al | grep 12
-
-clear
-
-python
-
-clear
-
-node &
-
-clear
-
-ls
-
-clear
-
-node
-
-clear
+set
 
-node &
+set a 'ls'
 
-clear
 clear
 
-ls &
+set a
 
-clear
-
-ls
-
-clear
-
-ls &
-
-ls &
-
-ls &
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear &
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-clear &
-
-ls
-
-clear
-
-clear
-
-clear
-
-clear
-
-ls
-
-ls &
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-cclear
-
-ls &
-
-clear
-
-ls
-
-clear
-
-picom
-
-kill picom
-
-clear
-
-picom 
-
-clear
-
-exit
-
-python &
-
-ps -u | grep java
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-ls &
-
-clear
-
-picom &
-
-clear
-
-ls
-
-clear
-
-fg 
-
-clear
-
-clear
-
-ls
-
-clear
-
-make build
-
-clear
+set
 
-make run
-
-clear
-
-ls
-
-clear
-
-ls | grep u
-
-clear
-
-ls
-
-clear
-
-ls | grep u
-
-clear
-
-ls | grep u
-
-clear
-
-ls | grep u
-
-ls | grep u
-
-ls | grep u && ls | wc 
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-ls
-
-clear
-
-make build
-
-clear
-
-make run
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
 clear
 
-ls
-
-clear
-
-clear &
-
-clear
-
-ls
-
-clear
-
-exit
-
-ls
-
-clear
-
-ls &
-
-clear
-
-python &
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-python &
-
-clear
+get a
 
-ls
-
-clear
-
-ls | grep u
-
 clear
 
-clear
+set a `ls`
 
-ls
+set a `ls | grep y | wc -l `
 
 clear
 
-ls | grep a
+set a `ls`
 
-make build
+set a `ls`
 
 clear
 
 ls
-
-clear
-
-ls | grep u
-
-clear
-
-make build
-
-clear
-
-ls | grep u
 
 clear
 
-ls | grep u
+set a 22
 
-clear
-
-ls | cat
-
-clear
-
-clear
-
-ls
+set
 
 clear
 
-ls | grep a
+set a `ls`
 
 clear
 
-ls | grep a && ls | grep e | wc -l
+set
 
 clear
 
-picom &
-
-clear
-
 ls
 
 clear
 
-jobs
+set a `ls | grep x | wc -l `
 
 clear
 
-jobs
+se
 
-fg 17783
+set
 
 clear
-
-ls
 
 clear
 
-ls -al
+set a `ls -al | grep u | wc -l `
 
 clear
 
 clear
-
-ls
 
-clear
+set alex `ls -al	`
 
-ls
+set
 
 c
 
 clear
 
-thunar &
+set a `ls`
 
+clear
+
+set a `ls`
+
+set a `ls`
+
+clear
+
+set a '12'
+
+set
+
+clear
+
+set a `ls`
+
+set
+
+clear
+
+ls
+
+clear
+
+set
+
+clear
+
+set b `ls | grep u | wc -l `
+
+set
+
+clear
+
+clear
+
+set alex `ls`
+
+set alex `ls`
+
+clear
+
+set a `ls`
+
+set a `ls`
+
+ls
+
+clear
+
+ls -al | grep u | wc -l > tmp
+
+cat tmp ; cat main.c > tmp
+
+cat tmp | grep u | wc -l
+
+clear
+
+cat main.c | wc -l
+
+clear
+
+set a `ls`
+
+set b `ls`
+
+history
+
+set alex `ls`
+
+set a `ls`
+
+clear
+
+ls
+
+clear
+
+clear
+
+exit
+
+ls
+
+clear
+
+ls | gre
+clear
+
+exit
+
+set a `ls`
+
+clear
+
+set alex
+cclear
+
+clear
+
+ls
+
+set e `l
+set a `ls`
+
+set a `ls`
+
+set a `ls`
+
+ls
+
+clear
+
+ls | gre
+clear
+
+clear
+
+clear
+
+set a `ls`
+
+set a `ls`
+
+set a 12
+
+clear
+
+set a `l
+clear
+
+set
+
+unset a
+
+clear
+
+set a `l
+set
+
+clear
+
+set alex
+clear
+
+set a 12
+clear
+
+set ale 
+set
+
+clear
+
+set a `e
+set
+
+clear
+
+set a `l
+set
+
+clear
+
+clear
+
+clear
+
+set a 12
+set
+
+clear
+
+set a = 
+set
+
+set a = 
+set
+
+clear
+
+set a 12
+
+set
+
+clear
+
+set a `ls`
+
+set
+
+clear
+
+clear
+
+set a 12
+clear
+
+set
+
+set alex
+set
+
+clear
+
+ls
+
+clear
+
+set
+
+clear
+
+clear
+
+set alex
+set
+
+clear
+
+clear
+
+set a `l
+set
+
+get a
+
+clear
+
+ls
+
+clear
+
+set a `l
+get a
+
+`ls`
+
+clear
+
+ls`
+
+ls `
+
+clear
+
+clear
+
+set a 12
+se
+
+set
+
+clear
+
+set a `l
+set
+
+clear
+
+set a `l
+set
+
+get a
+
+clear
+
+clear
+
+ls
+
+clear
+
+set a 12
+clear
+
+get a
+
+ls
+
+set
+
+clear
+
+set a `l
+get a
+
+    if(a
+    {
+
+    char
+    int 
+    int 
+clear
+
+get a `l
+get a
+
+set a `l
+get a
+
+clear
+
+set a `l
+get a
+
+clear
+
+clear
+
+set a `l
+clear
+
+get a
+
+clear
+
+set a `l
+get a
+
+clear
+
+set coma
+set
+
+clear
+
+set a `l
+set
+
+get a
+
+clear
+
+set
+
+set alex
+set
+
+get alex
+clear
+
+set a `l
+clear
+
+set alex
+set
+
+get a
+
+get alex
+clear
+
+ls
+
+clear
+
+set most
+get most
 clear
 
 exit
 
 clear
 
-p
+set a `l
+get a
+
+clear
+
+set alex
+get alex
+clear
+
+clear
+
+ls
+
+clear
+
+set a `l
+get a
+
+clear
+
+set alex
+get a
+
+get alex
+get alex
+clear
+
+set a `l
+get a
+
+clear
+
+set
+
+set a `l
+clear
+
+get a
+
+clear
+
+set a `l
+get a
+
+clear
+
+set alex
+get alex
+set
+
+clear
+
+get a
+
+clear
+
+set alex
+set
+
+get alex
+clear
+
+set a `l
+get a
+
+get a
+
+clear
+
+clear
+
+set a `l
+get a
+
+clear
+
+get a
+
+clear
+
+get a
+
+clear
+
+set alex
+clear
+
+set a `l
+get a
+
+clear
+
+get a
+
+clear
+
+clear
+
+set a 12
+get a
+
+get a
+
+clear
+
+set a `l
+get a
+
+get a
+
+clear
+
+set coma
+set
+
+get coma
+clear
+
+set
+
+set con_
+get con_
+clear
+
+ls
+
+set a `l
+clear
+
+clear
+
+set a `l
+get a
 
 clear
 
@@ -1507,91 +602,23 @@ ls
 
 clear
 
-ls &
+get a `l
+clear
+
+get a
 
 clear
 
-python &
+cler
 
 clear
 
-clear
-
-clear
-
-clear
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
+set a `l
+get a
 
 clear
 
 clear
 
-python &
-
-clear
-
-jobs
-
-clear
-
-ls
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-clear
-
-make build
-
-clear
-
-make run
-
-clear
-
-ls
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-l
-
-clear
-
-clear
-
-ls
-
-clear
-
-ls &
-
-clear
-
-python &
+exit
 

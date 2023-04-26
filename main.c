@@ -1,6 +1,7 @@
 #include <signal.h>
 #include "header.h"
 #include "parser.h"
+#include "variables.h"
 #include "execution.h"
 #include "cd.h"
 #include "sing_handling.h"
@@ -60,6 +61,7 @@ int main(int argc,char** args)
          }
          execcmd(pl);
       ver_procesos_background();
+      free(charline_ptr);
     }
 
  return 0;   
@@ -99,6 +101,20 @@ void execcmd(parsed_line pl)
       if(strcmp(command,"exit")==0)
       {
             exit(EXIT_SUCCESS);
+      }
+      if(strcmp(command,"get")==0 && at_a(pl.arguments,i)->size>1)
+      {
+         char* orig = getValue(*(get_args(&pl,i)+1));         
+         if(orig!=NULL && *orig=='`')
+         {
+         char* command = malloc(sizeof(char)*strlen(orig));
+         command=strcpy(command,orig);
+            *command=' ';
+            *(command+strlen(command)-1)='\n';
+            *(command+strlen(command)-2)=' ';
+            parsed_line pl_i = from(command,1);
+            execcmd(pl_i);
+         }
       }
       if(strcmp(command,"fg")==0)
       {         
@@ -217,8 +233,11 @@ void execcmd(parsed_line pl)
          push(&pipes_pids,job_pid);
       }
    }
-free(pipes);
-free(pipes_pids);
+   for(int i =0;i<pl.pipes->size;i++)
+   {
+      free(*(pipes+i));
+   }
+   free(pipes_pids);
 }
 
 void notification(char* messaje,int status)

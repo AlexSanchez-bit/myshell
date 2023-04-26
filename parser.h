@@ -27,7 +27,9 @@ parsed_line new_l()
 parsed_line from(char* origin_l,int lines)
 {
     int cant_t =0;
-     char** tokens = tokenize(origin_l,lines," ",&cant_t);//despues de esto original mantiene la linea
+    int cant_c =0;
+     char** tokens = tokenize(origin_l,strlen(origin_l)," ",&cant_t);//despues de esto original mantiene la linea
+     char** tokens_comp = tokenize(origin_l,strlen(origin_l),"`",&cant_c);
      List* comandos=new_p();
      AList* args_list = new_p_a();
      AList* r_inp = new_p_a();
@@ -35,6 +37,8 @@ parsed_line from(char* origin_l,int lines)
      List* separator = new_p();
      bool args=false;
      int command_count=0;
+    int last_c=1;
+
 
     for(int i=0;i< cant_t &&*(tokens+i)!=NULL;i++)
     {        
@@ -43,6 +47,7 @@ parsed_line from(char* origin_l,int lines)
 
         if(strcmp(token,"#")==0 || *(token)=='#')
         {
+            free(token);
           break;
         }
 
@@ -51,6 +56,7 @@ parsed_line from(char* origin_l,int lines)
             insert(pipes,at(comandos,command_count-1));            
             insert(separator,token);            
             args=false;
+            free(token);
             continue;
         }
 
@@ -69,6 +75,7 @@ parsed_line from(char* origin_l,int lines)
             }
             List* aux = at_a(r_inp,command_count-1);
             insert(aux,tmp);            
+            free(token);
             continue;
         }
         if(strcmp(token,"&&")==0 ||strcmp(token,"||")==0 ||strcmp(token,";")==0 )
@@ -89,11 +96,22 @@ parsed_line from(char* origin_l,int lines)
         continue;
         }
 
+        if(*token=='`' && last_c<cant_c)
+        {
+         insert(at_a(args_list,command_count-1),"`");   
+         insert(at_a(args_list,command_count-1),*(tokens_comp+last_c));   
+         insert(at_a(args_list,command_count-1),"`");   
+         last_c+=2;
+         for(;i<cant_t && *(*(tokens+i)+strlen(*(tokens+i))-1)!='`';i++)
+         {
+            free(*(tokens+i));            
+         }      
+         continue;
+        } 
 
         insert(at_a(args_list,command_count-1),token);//guardo la lista de argumentos para cada comando
         if(strcmp(token,"&")==0){args=false;}
     }
-
     return (parsed_line){comandos,args_list,r_inp,pipes,separator,command_count};
 }
 
@@ -119,6 +137,10 @@ char** redirect_input(parsed_line* pl,int i)
 
 char** tokenize( char* origin_s,int origin_size,const char* del,int* num_t)
 {
+    if(origin_size<=1)
+    {
+        return NULL;
+    }
 
     // *(origin_s+strlen(origin_s)-1)=' ';
     char* cpy1=malloc(sizeof(char)*origin_size);

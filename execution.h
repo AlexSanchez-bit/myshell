@@ -5,6 +5,7 @@
 #include "cd.h"
 #include "history.h"
 #include "help.h"
+#include "variables.h"
 #define READ_END 0
 #define WRITE_END 1
 
@@ -15,7 +16,6 @@ typedef void (*send)(char*);
 
 int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
 {
-
     if(argc==0)
     {
         printf("no command :'( \n");
@@ -27,9 +27,27 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
          if(wait==0){
             *(args+argc-1)=NULL;        
          }
-     }
+     }     
 
     char * command = *(args);
+    int var_ex_status =0;
+        if(strcmp(command,"set")==0)
+        {
+           var_ex_status= set_var(args);
+        }         
+        if(strcmp(command,"get")==0)
+        {
+                var_ex_status=get_value(*(args+1));
+        }         
+        if(strcmp(command,"unset")==0)
+        {
+            if(*(args+1)==NULL)
+            {
+               var_ex_status= EXIT_FAILURE;
+            }else{
+            unset_var(*(args+1));
+            }
+        }         
 
     pid_t pid;
      pid = fork();
@@ -50,6 +68,11 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
         {
             exit(EXIT_FAILURE);     
         }         
+        if(strcmp(command,"set")==0 || strcmp(command,"get")==0 || strcmp(command,"unset")==0)
+        {
+            exit(var_ex_status);
+        }
+        
       if(strcmp(command,"help")==0)
       {
          print_help(*(args+1));

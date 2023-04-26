@@ -1,0 +1,11 @@
+las variables se almacenan en una lista 
+para diferenciar las que usan `` durante el parseo se tokeniza diferente
+al encontrar un ` normalmente se separa por espacios , pero los bloques
+que tengan `` se toman completos ,luego al usarlos en un set , estos se 
+almacenan en un archivo temporal y son leidos desde el proceso donde se 
+guarda la variable 
+
+comandos builtin
+set <var> <value> asigna o reasigna la variable var con un valor value
+get <var> permite obtener el resultado almacenado en var
+unset <var> permite eliminar valores de la lista

@@ -21,7 +21,7 @@ List new_(char* element)
 List* new_p()
 {
      List tmp = new_(NULL);
-     List* comandos=malloc(sizeof(tmp));
+     List* comandos=malloc(sizeof(List));
      *comandos=tmp;
      return comandos;
 }

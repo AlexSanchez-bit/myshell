@@ -5,7 +5,7 @@
 int last_pid;
 void sign_handler(int sign_num)
 {
-     kill(last_pid,0);
+     kill(last_pid,0);//mata el ultimo proceso
      signal(SIGINT,SIG_DFL);
 }
 
