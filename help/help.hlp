@@ -6,7 +6,7 @@ multipipe: multiple tuberia(1 punto)
 ctrl+c: capturar y enviar senales(0.5 puntos)
 multiespacio: mas de un espacio(0.5 puntos)
 jobs-fg: jobs y comanos en segundo plano(0.5 puntos)
-andor: Operaciones para concatenar comandos (0.5 puntos)
+separadores : Operaciones para concatenar comandos (0.5 puntos)
 help : mostrar esta ayuda (1 punto)
 history : historial de comandos (0.5 puntos)
 again : repetir ultimo comando (0.5 puntos)
@@ -16,10 +16,19 @@ Comandos extra
 cd 
 history
 exit
-again 
+again las variables se almacenan en una lista 
+para diferenciar las que usan `` durante el parseo se tokeniza diferente
+al encontrar un ` normalmente se separa por espacios , pero los bloques
+que tengan `` se toman completos ,luego al usarlos en un set , estos se 
+almacenan en un archivo temporal y son leidos desde el proceso donde se 
+guarda la variable 
 fg
 jobs
 true
 false
+set 
+get 
+unset
+help
 
 total: 9 puntos

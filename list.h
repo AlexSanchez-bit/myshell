@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//*** estructura de datos auxiliares */
+
 struct List{
    char* data;
    struct List* next;
@@ -21,7 +23,7 @@ List new_(char* element)
 List* new_p()
 {
      List tmp = new_(NULL);
-     List* comandos=malloc(sizeof(List));
+     List* comandos=(List*)malloc(sizeof(List));
      *comandos=tmp;
      return comandos;
 }
@@ -30,7 +32,7 @@ void insert(List* list,char* element)
 {
      if(list->data==NULL)
      {
-        list->data=malloc(sizeof(element));
+        list->data=(char*)malloc(sizeof(element));
         strcpy(list->data,element);
         list->size++;
         return;
@@ -105,11 +107,11 @@ void remove_l(List* list,char* element)
 
 char** list_to_arr(List* list)
 {
-   char** ret = malloc(sizeof(char*)*(list->size+1));
+   char** ret = (char**)malloc(sizeof(char*)*(list->size+1));
    for(int i=0;i<list->size;i++)
    {
       char* tmp = at(list,i);
-      *(ret+i)=malloc(sizeof(char)*strlen(tmp));
+      *(ret+i)=(char*)malloc(sizeof(char)*strlen(tmp));
       strcpy(*(ret+i),tmp);
    }
    *(ret+list->size)=NULL;
@@ -135,7 +137,7 @@ AList new_a(List* element)
 AList* new_p_a()
 {
      AList tmp = new_a(NULL);
-     AList* comandos=malloc(sizeof(tmp));
+     AList* comandos=(AList*)malloc(sizeof(tmp));
      *comandos=tmp;
      return comandos;
 }
@@ -192,7 +194,7 @@ typedef struct stackint
 StackInt* _new_S(int dat)
 {
    StackInt new_ = (StackInt){dat,NULL};
-   StackInt* tmp = malloc(sizeof(new_));
+   StackInt* tmp = (StackInt*)malloc(sizeof(new_));
     *tmp = new_;
    return tmp;
 }

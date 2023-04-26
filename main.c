@@ -8,25 +8,25 @@
 
 //variables globales
 char* prompt ="\nmyshell $:"; //mensaje de la shell
-int job_count=0;
-List* Jobs;
+int job_count=0;//cantida de procesos en bg
+List* Jobs;//lista con los jobs activos
 StackInt* job_stack=NULL;//stack para los procesos en el background
-char* last_line;
-char* color ="\x1b[38;2;0;255;180m";
+char* last_line;//ultima linea insertada
+char* color ="\x1b[38;2;0;255;180m";//azul clarito
 
 //metodos auxiliares
-void execcmd(parsed_line pl);
-void notification(char*,int);
-void change_prompt();
-int manage_separator(char* separator,int status);
-int sig_sep(parsed_line pl);
-void change_color(int status);
- void ver_procesos_background();
+void execcmd(parsed_line pl);//ejecutar un comando
+void notification(char*,int);//notificar los jobs
+void change_prompt();//cambiar aspecto de la prompt
+int manage_separator(char* separator,int status);//para los separadores && || ; | 
+int sig_sep(parsed_line pl);//ubica la posicion del siguiente separador
+void change_color(int status);//cambiar el color en que se imprime el nombre de la shell
+ void ver_procesos_background();//verifica que hayan terminado los procesos del background
 
 int main(int argc,char** args)
 {
 
-    char wcd[1024];
+    char wcd[1024];//working directory
      getcwd(wcd,1024);//ruta desde donde se llamo la shell
      set_path(wcd);//guarda el path de history 
      set_help_folder(wcd);//guarda el path para help (para no perder la ruta)
@@ -36,25 +36,25 @@ int main(int argc,char** args)
     ssize_t read_code;//para ver el codigo de error al leer una linea
     parsed_line pl = new_l();
     Jobs = new_p();
-    last_line=get_last_line();
-   signal(SIGINT,sign_handler); 
+    last_line=get_last_line();//saca la ultima linea del historial
+   signal(SIGINT,sign_handler); //para manejar las senales
     while(1){ //loop
 
       printf("%s%s \x1b[38;2;255;255;255m",color,prompt); //muestra el prompt
-      fflush(stdout);
+      fflush(stdout);//limpia el flujo de salida estandar
     read_code= getline(&charline_ptr,&size,stdin);//recibe el input    
-          if (read_code==-1)
+          if (read_code==-1)// si se presiona ctrl D
           {
             printf("\n exitting\n");
             return -1;
           }
-         pl = from(charline_ptr,size);
+         pl = from(charline_ptr,size);//parsea la linea
 
          if(pl.commands->data==NULL)
          {
             continue;   
          }
-         if(strcmp(pl.commands->data,"again")!=0 ){
+         if(strcmp(pl.commands->data,"again")!=0 ){// si no se inserta again guardar en el historial
          last_line=malloc(sizeof(char)*(size));
          strcpy(last_line,charline_ptr);
           write_history(charline_ptr);
@@ -121,7 +121,7 @@ void execcmd(parsed_line pl)
          int status;
          char* arg=*(get_args(&pl,i)+1);
 
-         if(arg==NULL){
+         if(arg==NULL){// si no hay argumento saca el ultimo
          int towait = pop(&job_stack);
          if(towait==-1){continue;}
          waitpid(towait,&status,0);//espera por el proceso
@@ -232,6 +232,7 @@ void execcmd(parsed_line pl)
       }else{ //caso contrario se guardan en la lista de llamadas de pipes
          push(&pipes_pids,job_pid);
       }
+      free(separator);
    }
    for(int i =0;i<pl.pipes->size;i++)
    {

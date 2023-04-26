@@ -709,3 +709,66 @@ clear
 
 exit
 
+clear
+
+set a `l
+get a
+
+clear
+
+set a 12
+clear
+
+get a
+
+clear
+
+exit
+
+get
+
+clear
+
+get er
+
+clear
+
+unset a
+
+clear
+
+ls
+
+clear
+
+set a `l
+get a
+
+clear
+
+exit
+
+ls -al | grep u ; echo alex
+
+clear
+
+€O›ÚIV
+clear
+
+exit
+
+make run
+
+clear
+
+ks
+
+ls
+
+clear
+
+ls &
+
+clear
+
+python &

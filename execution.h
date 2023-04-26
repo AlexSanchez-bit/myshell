@@ -106,14 +106,14 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
               }
       }
 
-        if(pipe1!=NULL && pipe2==NULL)
+        if(pipe1!=NULL && pipe2==NULL)//si tiene un solo pipe solo conecto la salida
         {
            //primero de la cadena
             close(pipe1[READ_END]);
             dup2(pipe1[WRITE_END],STDOUT_FILENO);
             close(pipe1[WRITE_END]);
 
-        }else if(pipe1!=NULL && pipe2!=NULL)
+        }else if(pipe1!=NULL && pipe2!=NULL)//si tiene 2 es un comando del medio conecto salida y entrada
         {
             //los del medio
                 close(pipe1[WRITE_END]); 
@@ -124,7 +124,7 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
                 dup2(pipe2[WRITE_END],STDOUT_FILENO);
                 close(pipe2[WRITE_END]);
 
-        }else if( pipe1==NULL && pipe2!=NULL){
+        }else if( pipe1==NULL && pipe2!=NULL){//si tiene solo el pipe 2 es el ultimo comando de la cadena conecto la entrada solamente
             //el ultimo del enlace
                 close(pipe2[WRITE_END]);
                 dup2(pipe2[READ_END],STDIN_FILENO);

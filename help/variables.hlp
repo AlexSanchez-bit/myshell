@@ -1,9 +1,7 @@
-las variables se almacenan en una lista 
-para diferenciar las que usan `` durante el parseo se tokeniza diferente
-al encontrar un ` normalmente se separa por espacios , pero los bloques
-que tengan `` se toman completos ,luego al usarlos en un set , estos se 
-almacenan en un archivo temporal y son leidos desde el proceso donde se 
-guarda la variable 
+las variables son almacenadas en dos listas como pares llave-valor , los comandos que contienen las ``
+al hacer get a sus variables , ejecutan el comano almacenado en el mismo pipeline
+que un comando normal ejecutado por la shell , es decir que tiene los mismos
+comandos y funcionalidades
 
 comandos builtin
 set <var> <value> asigna o reasigna la variable var con un valor value
