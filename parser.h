@@ -47,7 +47,6 @@ parsed_line from(char* origin_l,int lines)
 
         if(strcmp(token,"#")==0 || *(token)=='#')
         {
-            free(token);
           break;
         }
 
@@ -56,7 +55,6 @@ parsed_line from(char* origin_l,int lines)
             insert(pipes,at(comandos,command_count-1));            
             insert(separator,token);            
             args=false;
-            free(token);
             continue;
         }
 
@@ -75,7 +73,6 @@ parsed_line from(char* origin_l,int lines)
             }
             List* aux = at_a(r_inp,command_count-1);
             insert(aux,tmp);            
-            free(token);
             continue;
         }
         if(strcmp(token,"&&")==0 ||strcmp(token,"||")==0 ||strcmp(token,";")==0 )
@@ -104,7 +101,6 @@ parsed_line from(char* origin_l,int lines)
          last_c+=2;
          for(;i<cant_t && *(*(tokens+i)+strlen(*(tokens+i))-1)!='`';i++)
          {
-            free(*(tokens+i));            
          }      
          continue;
         } 
@@ -115,7 +111,15 @@ parsed_line from(char* origin_l,int lines)
     return (parsed_line){comandos,args_list,r_inp,pipes,separator,command_count};
 }
 
-//setters
+//destructor
+void dest_parser(parsed_line* pl)
+{
+  free_list(&(pl)->commands);
+  free_list(&(pl)->pipes);
+  free_list(&(pl)->separator);
+  free_AList(&(pl)->arguments);
+  free_AList(&(pl)->redirect);
+}
 
 //getters
 
@@ -137,6 +141,7 @@ char** redirect_input(parsed_line* pl,int i)
 
 char** tokenize( char* origin_s,int origin_size,const char* del,int* num_t)
 {
+
     if(origin_size<=1)
     {
         return NULL;
@@ -166,8 +171,6 @@ char** tokenize( char* origin_s,int origin_size,const char* del,int* num_t)
      }
      *(args+*num_t)=NULL;
 
-     free(cpy1);
-     free(cpy2);
     return args;
 }
 

@@ -45,6 +45,8 @@ int main(int argc,char** args)
     read_code= getline(&charline_ptr,&size,stdin);//recibe el input    
           if (read_code==-1)// si se presiona ctrl D
           {
+            free_list(&Jobs);
+            free_stack(&job_stack);
             printf("\n exitting\n");
             return -1;
           }
@@ -61,9 +63,8 @@ int main(int argc,char** args)
          }
          execcmd(pl);
       ver_procesos_background();
-      free(charline_ptr);
+      dest_parser(&pl);
     }
-
  return 0;   
 }
 
@@ -100,6 +101,8 @@ void execcmd(parsed_line pl)
 //comandos comunes (van aparte)
       if(strcmp(command,"exit")==0)
       {
+            free_list(&Jobs);
+            free_stack(&job_stack);
             exit(EXIT_SUCCESS);
       }
       if(strcmp(command,"get")==0 && at_a(pl.arguments,i)->size>1)
@@ -148,7 +151,7 @@ void execcmd(parsed_line pl)
       {
          if(last_line!=NULL)
          {
-            parsed_line pl1 = from(last_line,strlen(last_line)-1);
+            parsed_line pl1 = from(last_line,strlen(last_line));
             execcmd(pl1);
          }else{
             printf("no hay comando guardado\n");
@@ -238,7 +241,6 @@ void execcmd(parsed_line pl)
    {
       free(*(pipes+i));
    }
-   free(pipes_pids);
 }
 
 void notification(char* messaje,int status)

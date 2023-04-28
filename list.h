@@ -118,6 +118,24 @@ char** list_to_arr(List* list)
    return ret;
 }
 
+void free_list(List** list)
+{
+   List* aux=*list;
+   if(aux==NULL)
+   {
+      return;
+   }else if(aux->next==NULL)
+   {
+      free(aux->data);
+      free(*list);
+   }
+   else{
+      free_list(&(aux->next));
+      free(aux->data);
+      free(*list);
+   }
+}
+
 
 //lista e listas
 struct AList
@@ -184,7 +202,24 @@ char** get_arr(AList* list,int i)
    return list_to_arr(at_a(list,i));
 }
 
+void free_AList(AList** lis)
+{
+   if(lis==NULL)
+   {
+      return;
+   }else if((*lis)->next==NULL)
+   {
+      free_list(&((*lis)->data));
+      free(*lis);
+   }
+   else{
+      free_AList(&((*lis)->next));
+      free_list(&((*lis)->data));
+      free(*lis);
+   }
+}
 
+//stack para los procesos
 typedef struct stackint
 {
    int data;
@@ -218,8 +253,10 @@ int pop(StackInt** stck)
    {
       return -1;
    }
+   StackInt* ant=*stck;
    int ret = (*stck)->data;
    *stck=(*stck)->next;
+   free(ant);
    return ret;
 }
 
@@ -276,6 +313,15 @@ char** stack_to_arr(StackInt* stck)
        aux=aux->next;
    }
    return list_to_arr(list); 
+}
+
+void free_stack(StackInt** stki)
+{
+   while (*stki !=NULL)
+   {
+      pop(stki);
+   }
+   
 }
 
 #endif

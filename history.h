@@ -4,6 +4,7 @@
 
 
 char* path;
+char* get_last_line();
 
 void set_path(char* c_path)
 {
@@ -15,6 +16,13 @@ path=strcat(path,file_name);
 
 void write_history(char* line)
 {
+   char* aux = get_last_line();
+
+   if(aux!=NULL && strcmp(line,aux)==0)
+   {
+     return;
+   }
+
    int file = open(path,O_WRONLY | O_APPEND | O_CREAT);
    if(file==-1)
    {
@@ -51,15 +59,20 @@ char* get_last_line()
    char* token = strtok(buff,"\n");
    char* ant=token;
    int i=0;
+   int size=0;
    while (token!=NULL)
    {
-    ant=malloc(sizeof(char)*(strlen(token)+1));
+      size=strlen(token)+1;
+    ant=malloc(sizeof(char)*(size));
     ant=strcat(ant,token);
-    *(ant+strlen(token)+1)='\n';
     token=strtok(NULL,"\n");
     i++;
    }
    close(file);
+   if(ant!=NULL)
+   {
+     *(ant+size-1)='\n'; 
+   }
    return ant;
 }
 
