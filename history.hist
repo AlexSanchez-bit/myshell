@@ -46,3 +46,23 @@ clear
 
 git add .
 
+clear
+
+git commit -m "corregidos errores de memoria"
+
+clear
+
+set a `ls`
+
+get a
+
+clear
+
+get a
+
+clear
+
+set
+
+clear
+

@@ -117,6 +117,7 @@ void execcmd(parsed_line pl)
             *(command+strlen(command)-2)=' ';
             parsed_line pl_i = from(command,1);
             execcmd(pl_i);
+      dest_parser(&pl_i);
          }
       }
       if(strcmp(command,"fg")==0)
@@ -153,6 +154,7 @@ void execcmd(parsed_line pl)
          {
             parsed_line pl1 = from(last_line,strlen(last_line));
             execcmd(pl1);
+      dest_parser(&pl1);
          }else{
             printf("no hay comando guardado\n");
          }
