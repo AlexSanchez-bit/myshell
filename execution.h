@@ -139,7 +139,7 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
         redirect(*(r_inp+i));
        }
          
-                char* const_head = (*(command)!='.' && *(command)!='/')?"/bin/":"";
+                char* const_head = (*(command)!='.' && *(command)!='/')?"":"";
                 char* call_status = concat(const_head,command);
                 fflush(NULL);
                 int execution = execvp(call_status,args);

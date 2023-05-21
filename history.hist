@@ -66,3 +66,175 @@ set
 
 clear
 
+ls | grep u | wc -l
+
+clear
+
+exit
+
+clear
+
+ls
+
+clear
+
+set a `ls -al | grep alex | wc `
+
+set a `ls`
+
+get a
+
+clear
+
+ls -al
+
+clear
+
+ls -al | grep alex | wc -l
+
+clear
+
+set a `ls -al | grep alex`
+
+get a
+
+set
+
+clear
+
+ls -al | grep alex
+
+ls -al
+
+clear
+
+set a `ls | grep ma
+
+get a
+
+clear
+
+exit
+
+clear
+
+ls
+
+ls | grep u | wc -l
+
+clear
+
+code .
+
+clear
+
+vim
+
+vi
+
+nvim
+
+clear
+
+set a `ls -al | grep a `
+
+get a
+
+clear
+
+ls a
+
+clear
+
+exit
+
+ls
+
+clear
+
+ls
+
+ls -al | grep hist
+
+clear
+
+echo alex
+
+clear
+
+git status
+
+clear
+
+ls
+
+clear
+
+lslsls
+
+clear
+
+alex
+
+clear
+
+pop
+
+clear
+
+cd
+
+clear
+
+pwd
+
+clear
+
+cd das
+
+clear
+
+cd datos
+
+pwd
+
+clear
+
+cd liz
+
+clear
+
+ls
+
+clear
+
+touch archivito.txt
+
+ls | grep archivito
+
+rm archivito.txt
+
+clear
+
+ls
+
+clear
+
+cd ~/Downloads
+
+pwd
+
+clear
+
+exit
+
+ls
+
+clear
+
+./shell.out
+
+clear
+
+exit
+
