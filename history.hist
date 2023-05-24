@@ -238,3 +238,59 @@ clear
 
 exit
 
+ls
+
+clear
+
+ls | grep u
+
+clear
+
+ls | grep | wc -l
+
+clear
+
+ls | grep u | wc -l
+
+clear
+
+cd '~/datos/Carpeta nueva'
+
+clear
+
+xd
+
+clear
+
+echo xd
+
+clear
+
+ls
+
+clear
+
+help
+
+jobs
+
+fg 
+
+ls -al
+
+ls -al | grep u
+
+ls &
+
+fg
+
+cd da
+
+./sll.out
+
+ls
+
+./shell.out
+
+exit
+

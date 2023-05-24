@@ -41,7 +41,7 @@ int main(int argc,char** args)
     while(1){ //loop
 
       printf("%s%s \x1b[38;2;255;255;255m",color,prompt); //muestra el prompt
-      fflush(stdout);//limpia el flujo de salida estandar
+     
     read_code= getline(&charline_ptr,&size,stdin);//recibe el input    
           if (read_code==-1)// si se presiona ctrl D
           {
@@ -220,6 +220,7 @@ void execcmd(parsed_line pl)
             tmp = pop(&pipes_pids);
          }
          waitpid(job_pid,&status,0);
+
          change_color(status);
          if(separator!=NULL){
 

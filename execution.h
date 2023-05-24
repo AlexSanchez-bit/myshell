@@ -131,27 +131,25 @@ int exec_cmd(int argc,char** args,char** r_inp,int* pipe1,int* pipe2)
                 close(pipe2[READ_END]);
         }
 
-
-                printf(" \n");
-
+                
+ 
        for(int i=0;*(r_inp+i)!=NULL;i++)
        {
         redirect(*(r_inp+i));
        }
-         
-                char* const_head = (*(command)!='.' && *(command)!='/')?"":"";
-                char* call_status = concat(const_head,command);
-                fflush(NULL);
-                int execution = execvp(call_status,args);
+        printf("\n");
+                 
+                int execution = execvp(command,args);
+                printf("despues de la ejecucion");
                 if(execution==-1)
                     {
                         fprintf(stderr,"comando no reconocido : %s \n",command);
                         exit(EXIT_FAILURE);     
                     }
+                   
     }
     else
     {
-      fflush(stdout);
         if(wait==0){
             return pid*-1;
         }
